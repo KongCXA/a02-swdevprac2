@@ -2,59 +2,65 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>แบบฟอร์มอุปการะ - Chula Zoo</title>
+    <title>แจ้งความสนใจรับอุปการะสุนัข</title>
 </head>
 <body>
 
-    <h1>แบบฟอร์มอุปการะสัตว์</h1>
+    <h1>แบบฟอร์มแจ้งความสนใจรับอุปการะสุนัข</h1>
 
-    <form action="#" method="post">
+    <form id="adoptForm" action="#" method="post">
+        <h2>1. ข้อมูลส่วนตัว</h2>
         <p>
-            <label for="fullname">ชื่อ-นามสกุล:</label>
+            <label for="fullname">ชื่อ - นามสกุล:</label>
             <input type="text" id="fullname" name="fullname" required>
         </p>
         <p>
-            <label for="contact">ข้อมูลติดต่อ:</label>
-            <input type="text" id="contact" name="contact" required>
+            <label for="phone">เบอร์ติดต่อ:</label>
+            <input type="tel" id="phone" name="phone" required>
         </p>
         <p>
-            <label for="address">ที่อยู่:</label>
-            <input type="text" id="address" name="address" required>
+            <label for="email">อีเมล:</label>
+            <input type="email" id="email" name="email">
         </p>
 
+        <h2>2. สิ่งแวดล้อมในการเลี้ยงดู</h2>
         <p>
-            <label for="dog">เลือกสุนัขที่ต้องการอุปการะ:</label>
-            <select id="dog" name="dog">
-                <option value="bobo">โบโบ้</option>
-                <option value="lucky">ลัคกี้</option>
-                <option value="makham">มะขาม</option>
-                <option value="kao">เจ้าขาว</option>
+            <label for="address">ที่อยู่:</label><br>
+            <textarea id="address" name="address" rows="3" cols="40"></textarea>
+        </p>
+        <p>
+            <label for="housing">ลักษณะที่พักอาศัย:</label>
+            <select id="housing" name="housing" required>
+                <option value="garden">บ้านสวน</option>
+                <option value="single">บ้านเดี่ยว</option>
+                <option value="townhome">บ้านทาวน์โฮม</option>
+                <option value="condo">คอนโดมิเนียม/หอพัก</option>
             </select>
         </p>
-
-        <p>เคยเลี้ยงสุนัขมาก่อนหรือไม่?</p>
-        <input type="radio" id="expYes" name="experience" value="yes">
-        <label for="expYes">เคย</label>
-        <input type="radio" id="expNo" name="experience" value="no">
-        <label for="expNo">ไม่เคย</label>
+        <p>ลักษณะการเลี้ยงสุนัข:</p>
+        <input type="radio" id="indoor" name="dogplace" value="indoor" required>
+        <label for="indoor">เลี้ยงสุนัขภายในบ้าน</label><br>
+        <input type="radio" id="outdoor" name="dogplace" value="outdoor">
+        <label for="outdoor">เลี้ยงสุนัขภายนอกบ้าน</label>
 
         <p>
-            <label for="qty">จำนวนสุนัขที่ต้องการอุปการะ:</label>
-            <input type="number" id="qty" name="qty" min="1">
+            <label for="petnum">จำนวนสัตว์เลี้ยงที่มีอยู่ปัจจุบัน:</label>
+            <input type="number" id="petnum" name="petnum" required>
+        </p>
+        <p>
+            <input type="checkbox" id="agree" name="agree">
+            <label for="agree">การส่งแบบฟอร์มนี้เป็นการแจ้งความสนใจ โดยไม่รับรองการได้รับอุปการะสุนัข</label>
         </p>
 
         <p>
-            <input type="checkbox" id="agree" name="agree" required>
-            <label for="agree">ยอมรับข้อตกลงไม่รับรองการได้รับอุปการะสุนัข</label>
-        </p>
-
-        <p>
-            <input type="submit" value="ส่งข้อมูล">
+            <button type="submit">Submit Form</button>
             <input type="reset" value="ล้างข้อมูล">
         </p>
     </form>
 
-    <p>รหัสนิสิต: 6532043021 ชวนากร อรรฆยจินดา</p>
-
+    <div style="text-align:center; margin-top:30px;">
+        รหัสนิสิต: 6532043021 ชวนากร อรรฆยจินดา
+    </div>
+    <script src="adoptme.js"></script>
 </body>
 </html>
